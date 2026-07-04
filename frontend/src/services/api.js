@@ -14,6 +14,9 @@ export const getMe = () => api.get('/api/auth/me');
 
 // Dashboard
 export const getDashboardOverview = () => api.get('/api/dashboard/overview');
+export const getDashboardTimeline = () => api.get('/api/dashboard/timeline');
+export const getDashboardHealth = () => api.get('/api/dashboard/health');
+export const getDashboardSentiment = () => api.get('/api/dashboard/sentiment');
 
 // Complaints
 export const getComplaints = (params) => api.get('/api/complaints', { params });
@@ -36,15 +39,21 @@ export const getAlerts = (params) => api.get('/api/alerts', { params });
 export const acknowledgeAlert = (id) => api.patch(`/api/alerts/${id}/acknowledge`);
 export const resolveAlert = (id) => api.patch(`/api/alerts/${id}/resolve`);
 
-// AI Chat
+// AI Chat (Chief Officer)
 export const sendChatMessage = (question) => api.post('/api/chat', { question });
 export const getChatHistory = () => api.get('/api/chat/history');
 export const getChatSuggestions = () => api.get('/api/chat/suggestions');
 
-// Simulation
+// Simulation + Crisis Mode
 export const runSimulation = (params) => api.post('/api/simulation/run', params);
+export const runCrisisMode = (crisisId) => api.post(`/api/simulation/crisis/${crisisId}`);
+export const getCrisisPresets = () => api.get('/api/simulation/crisis-presets');
 export const getSimulationHistory = () => api.get('/api/simulation/history');
 export const getSimulationPresets = () => api.get('/api/simulation/presets');
+
+// Reports
+export const generateReport = () => api.post('/api/reports/generate');
+export const listReports = () => api.get('/api/reports');
 
 // Map
 export const getMapComplaints = () => api.get('/api/map/complaints');

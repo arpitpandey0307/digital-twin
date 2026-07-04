@@ -942,6 +942,132 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* ==========================================
+   DECISION TIMELINE
+   ========================================== */
+.timeline-container {
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  left: -19px;
+  top: 18px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.timeline-item:last-child .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--surface-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.timeline-content:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--surface-hover);
+}
+
+/* ==========================================
+   CASCADING CHAIN
+   ========================================== */
+.cascade-chain {
+  display: flex;
+  flex-direction: column;
+}
+
+.cascade-stage {
+  position: relative;
+}
+
+.cascade-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 0;
+  position: relative;
+}
+
+.cascade-connector::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  transform: translateX(-50%);
+}
+
+.cascade-card {
+  padding: var(--space-md);
+  background: var(--surface-card);
+  border: 1px solid var(--glass-border);
+  border-left: 3px solid;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.cascade-card:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--surface-hover);
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   AGENT PIPELINE
+   ========================================== */
+.agent-pipeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-node {
+  padding: var(--space-sm) 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ==========================================
+   CRISIS MODE
+   ========================================== */
+.crisis-btn {
+  transition: all var(--transition-fast) !important;
+}
+
+.crisis-btn:hover {
+  background: rgba(239, 68, 68, 0.06) !important;
+  border-color: rgba(239, 68, 68, 0.2) !important;
+  transform: translateX(4px);
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 @media (max-width: 1024px) {
@@ -977,3 +1103,4 @@ input[type="range"]::-webkit-slider-thumb {
     padding: var(--space-lg);
   }
 }
+

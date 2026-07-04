@@ -1,12 +1,12 @@
 """
-Simulation Router — What-if scenario endpoint.
+Simulation Router — What-if scenarios + Crisis Mode.
 """
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from typing import Optional, List
 
 from app.database import get_db
-from app.engine.simulator import run_simulation
+from app.engine.simulator import run_simulation, CRISIS_PRESETS
 from app.models.simulation import SimulationHistory
 from app.schemas.data import SimulationRequest
 
@@ -15,7 +15,7 @@ router = APIRouter(prefix="/api/simulation", tags=["Simulation"])
 
 @router.post("/run")
 async def run_what_if(request: SimulationRequest, db: Session = Depends(get_db)):
-    """Run a what-if simulation with custom parameters."""
+    """Run a what-if simulation with cascading chain analysis."""
     params = {
         "rainfall_mm": request.rainfall_mm,
         "temperature": request.temperature,
@@ -26,6 +26,31 @@ async def run_what_if(request: SimulationRequest, db: Session = Depends(get_db))
     }
     result = await run_simulation(params, db)
     return result
+
+
+@router.post("/crisis/{crisis_id}")
+async def run_crisis_mode(crisis_id: str, db: Session = Depends(get_db)):
+    """Run a pre-defined crisis scenario — everything changes instantly."""
+    if crisis_id not in CRISIS_PRESETS:
+        return {"error": f"Unknown crisis: {crisis_id}. Available: {list(CRISIS_PRESETS.keys())}"}
+
+    preset = CRISIS_PRESETS[crisis_id]
+    result = await run_simulation(preset["params"], db)
+    result["crisis_name"] = preset["name"]
+    result["crisis_icon"] = preset["icon"]
+    result["crisis_description"] = preset["description"]
+    return result
+
+
+@router.get("/crisis-presets")
+async def get_crisis_presets():
+    """Get all available crisis mode presets."""
+    return {
+        "presets": [
+            {"id": k, **v}
+            for k, v in CRISIS_PRESETS.items()
+        ]
+    }
 
 
 @router.get("/history")

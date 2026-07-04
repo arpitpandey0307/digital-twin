@@ -27,6 +27,7 @@ from app.routers.simulation import router as simulation_router
 from app.routers.data import (
     weather_router, aqi_router, traffic_router,
     predictions_router, alerts_router, map_router,
+    reports_router,
 )
 
 from app.services.weather_service import fetch_current_weather, generate_ward_weather
@@ -186,6 +187,7 @@ app.include_router(traffic_router)
 app.include_router(predictions_router)
 app.include_router(alerts_router)
 app.include_router(map_router)
+app.include_router(reports_router)
 
 
 # --- SSE Stream ---

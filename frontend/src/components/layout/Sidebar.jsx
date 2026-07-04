@@ -2,14 +2,14 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard, Map, MessageSquare, FlaskConical,
   FileText, BarChart3, Bell, Settings, ClipboardList,
-  FileBarChart, Zap
+  FileBarChart, Zap, Brain, Activity
 } from 'lucide-react';
 
 const navItems = [
-  { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+  { path: '/dashboard', label: 'Command Center', icon: LayoutDashboard },
   { path: '/map', label: 'City Map', icon: Map },
-  { path: '/chat', label: 'AI Assistant', icon: MessageSquare },
-  { path: '/simulation', label: 'Simulator', icon: FlaskConical },
+  { path: '/chat', label: 'AI Chief Officer', icon: Brain },
+  { path: '/simulation', label: 'Digital Twin', icon: FlaskConical },
   { path: '/complaints', label: 'Complaints', icon: ClipboardList },
   { path: '/analytics', label: 'Analytics', icon: BarChart3 },
   { path: '/alerts', label: 'Alerts', icon: Bell },

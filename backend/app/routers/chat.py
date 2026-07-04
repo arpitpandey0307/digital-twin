@@ -1,5 +1,5 @@
 """
-Chat Router — AI chat with RAG pipeline.
+Chat Router — AI Chief Officer chat with RAG pipeline + action plans.
 """
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
@@ -12,9 +12,9 @@ from app.schemas.data import ChatRequest, ChatResponse
 router = APIRouter(prefix="/api/chat", tags=["AI Chat"])
 
 
-@router.post("", response_model=ChatResponse)
+@router.post("")
 async def chat(request: ChatRequest, db: Session = Depends(get_db)):
-    """Ask the AI assistant a question about the city."""
+    """Ask the AI Chief Officer a question — get answers + action plans."""
     result = await answer_question(request.question, db)
 
     # Save to chat history
@@ -26,12 +26,13 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
     db.add(history)
     db.commit()
 
-    return ChatResponse(
-        question=request.question,
-        answer=result.get("answer", "No response available"),
-        context_used=result.get("context_used"),
-        suggestions=result.get("suggestions"),
-    )
+    return {
+        "question": request.question,
+        "answer": result.get("answer", "No response available"),
+        "context_used": result.get("context_used"),
+        "suggestions": result.get("suggestions"),
+        "action_plan": result.get("action_plan"),
+    }
 
 
 @router.get("/history")
@@ -54,16 +55,16 @@ async def get_chat_history(limit: int = 20, db: Session = Depends(get_db)):
 
 @router.get("/suggestions")
 async def get_suggestions():
-    """Get suggested questions."""
+    """Get suggested questions — designed for the AI Chief Officer."""
     return {
         "suggestions": [
-            "What are the biggest risks tomorrow?",
+            "What should I do to prepare for tomorrow?",
             "Which ward needs the most attention right now?",
-            "Show me complaint trends this month",
-            "What should we do if rainfall doubles?",
-            "Why is pollution increasing?",
-            "What is the flood risk in Ward 4?",
-            "Compare traffic across all wards",
-            "Generate a summary of today's alerts",
+            "Deploy resources — where are the biggest risks?",
+            "Generate an emergency action plan for a flood scenario",
+            "What is the optimal resource allocation right now?",
+            "Show me the cost-benefit of deploying pumps",
+            "Why is flood risk high in Ward 4?",
+            "Compare all wards and prioritize response",
         ]
     }
