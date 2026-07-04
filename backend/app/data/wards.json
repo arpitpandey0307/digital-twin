@@ -1,0 +1,134 @@
+[
+  {
+    "ward_name": "Ward 1 - Colaba",
+    "population": 85000,
+    "area_sq_km": 7.2,
+    "num_hospitals": 3,
+    "num_schools": 8,
+    "num_shelters": 2,
+    "drainage_capacity": 65.0,
+    "center_lat": 18.9067,
+    "center_lng": 72.8147
+  },
+  {
+    "ward_name": "Ward 2 - Byculla",
+    "population": 120000,
+    "area_sq_km": 5.8,
+    "num_hospitals": 4,
+    "num_schools": 12,
+    "num_shelters": 3,
+    "drainage_capacity": 55.0,
+    "center_lat": 18.9762,
+    "center_lng": 72.8334
+  },
+  {
+    "ward_name": "Ward 3 - Dadar",
+    "population": 145000,
+    "area_sq_km": 6.1,
+    "num_hospitals": 5,
+    "num_schools": 15,
+    "num_shelters": 2,
+    "drainage_capacity": 70.0,
+    "center_lat": 19.0178,
+    "center_lng": 72.8478
+  },
+  {
+    "ward_name": "Ward 4 - Kurla",
+    "population": 180000,
+    "area_sq_km": 8.3,
+    "num_hospitals": 3,
+    "num_schools": 18,
+    "num_shelters": 4,
+    "drainage_capacity": 45.0,
+    "center_lat": 19.0726,
+    "center_lng": 72.8845
+  },
+  {
+    "ward_name": "Ward 5 - Andheri",
+    "population": 220000,
+    "area_sq_km": 12.5,
+    "num_hospitals": 7,
+    "num_schools": 22,
+    "num_shelters": 5,
+    "drainage_capacity": 50.0,
+    "center_lat": 19.1136,
+    "center_lng": 72.8697
+  },
+  {
+    "ward_name": "Ward 6 - Borivali",
+    "population": 195000,
+    "area_sq_km": 15.2,
+    "num_hospitals": 4,
+    "num_schools": 20,
+    "num_shelters": 3,
+    "drainage_capacity": 60.0,
+    "center_lat": 19.2288,
+    "center_lng": 72.8568
+  },
+  {
+    "ward_name": "Ward 7 - Mulund",
+    "population": 160000,
+    "area_sq_km": 9.8,
+    "num_hospitals": 3,
+    "num_schools": 14,
+    "num_shelters": 2,
+    "drainage_capacity": 40.0,
+    "center_lat": 19.1726,
+    "center_lng": 72.9565
+  },
+  {
+    "ward_name": "Ward 8 - Chembur",
+    "population": 175000,
+    "area_sq_km": 10.1,
+    "num_hospitals": 4,
+    "num_schools": 16,
+    "num_shelters": 3,
+    "drainage_capacity": 42.0,
+    "center_lat": 19.0522,
+    "center_lng": 72.9005
+  },
+  {
+    "ward_name": "Ward 9 - Bandra",
+    "population": 130000,
+    "area_sq_km": 6.9,
+    "num_hospitals": 5,
+    "num_schools": 11,
+    "num_shelters": 3,
+    "drainage_capacity": 55.0,
+    "center_lat": 19.0596,
+    "center_lng": 72.8295
+  },
+  {
+    "ward_name": "Ward 10 - Goregaon",
+    "population": 200000,
+    "area_sq_km": 11.4,
+    "num_hospitals": 3,
+    "num_schools": 17,
+    "num_shelters": 4,
+    "drainage_capacity": 48.0,
+    "center_lat": 19.1552,
+    "center_lng": 72.8494
+  },
+  {
+    "ward_name": "Ward 11 - Malad",
+    "population": 210000,
+    "area_sq_km": 13.6,
+    "num_hospitals": 5,
+    "num_schools": 19,
+    "num_shelters": 4,
+    "drainage_capacity": 52.0,
+    "center_lat": 19.1872,
+    "center_lng": 72.8484
+  },
+  {
+    "ward_name": "Ward 12 - Kandivali",
+    "population": 185000,
+    "area_sq_km": 10.7,
+    "num_hospitals": 4,
+    "num_schools": 16,
+    "num_shelters": 3,
+    "drainage_capacity": 38.0,
+    "center_lat": 19.2047,
+    "center_lng": 72.8525
+  }
+]
